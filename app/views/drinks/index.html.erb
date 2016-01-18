@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="large-12">
+    <h1>Drinks</h1>
+    <%= link_to 'add drink', new_drink_path %>
+
+    <%- if !@drinks.empty? -%>
+
+        <%- @drinks.each do |drink| -%>
+          <div class="eachDrink">
+            <ul><%= drink.title %></ul>
+            <ul> <img src= <%= drink.image_url %> alt="<%= drink.title %>" height="42" width="42"> </ul>
+            <ul><%= drink.season %></ul>
+            <ul><%= drink.instructions %></`ul`>
+            <ul><%= truncate(drink.description, length: 30) %></ul>
+            <ul>
+              <%= link_to 'Delete',
+                '/drinks/' + drink.to_param,
+                method: :delete %>
+            </ul>
+          </div>
+        <%- end -%>
+
+
+    <%- end -%>
+  </div>
+</div>

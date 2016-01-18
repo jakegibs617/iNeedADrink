@@ -1,0 +1,44 @@
+<div class="row">
+  <%- if @drink.errors.present? -%>
+    <div class="large-12 alert-box alert" data-alert>
+      <ul>
+        <%- @drink.errors.full_messages.each do |error| -%>
+          <li><%= error %></li>
+        <%- end -%>
+      </ul>
+    </div>
+  <%- end -%>
+
+  <div class="large-12">
+    <h1>New Drink</h1>
+
+    <%= form_for @drink do |f| %>
+
+    <div class="row">
+      <div class="field">
+				<%= f.label :season %>
+        <select name="post[season]">
+          <option value="1" selected="selected">Winter</option>
+          <option value="2">Summer</option>
+          <option value="3">Fall</option>
+          <option value="4">Spring</option>
+        </select>
+			</div>
+		</div>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+
+      <%= f.label :instructions %>
+      <%= f.text_field :instructions %>
+
+      <%= f.submit "Add Drink" %>
+    <%- end -%>
+  </div>
+</div>
