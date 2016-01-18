@@ -20,11 +20,6 @@
             <ul><strong>THE PARTICULARS: </strong><%= drink.ingredients %></ul>
             <ul><%= drink.instructions %></ul>
 
-            <ul>
-              <%= link_to 'Delete',
-                '/drinks/' + drink.to_param,
-                method: :delete %>
-            </ul>
           </div>
         <%- end -%>
 
