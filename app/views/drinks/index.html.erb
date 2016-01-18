@@ -2,6 +2,12 @@
   <div class="large-12">
     <h1>Drinks</h1>
     <%= link_to 'add drink', new_drink_path %>
+    <div class="form-group search">
+      <%= form_tag(drinks_path, method: "get", id: "main-search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Drinks", id: "search", class: "form-control" %>
+      <%= submit_tag "Search", name: nil, class: "button" %>
+      <% end %>
+		</div>
 
     <%- if !@drinks.empty? -%>
 

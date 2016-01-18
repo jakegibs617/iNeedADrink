@@ -21,7 +21,12 @@ class DrinksController < ApplicationController
   end
 
   def index
-    @drinks = Drink.all
+    if params[:search]
+      search = params[:search]
+      @drinks = Drink.search(search)
+    else
+      @drinks = Drink.all
+    end
   end
 
   protected

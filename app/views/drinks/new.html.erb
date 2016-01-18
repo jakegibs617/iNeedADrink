@@ -17,13 +17,8 @@
     <div class="row">
       <div class="field">
 				<%= f.label :season %>
-        <select name="post[season]">
-          <option value="1" selected="selected">Winter</option>
-          <option value="2">Summer</option>
-          <option value="3">Fall</option>
-          <option value="4">Spring</option>
-        </select>
-			</div>
+        <%= f.select :season, Drink::SEASONS %>
+    	</div>
 		</div>
 
       <%= f.label :title %>
