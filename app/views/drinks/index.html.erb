@@ -12,12 +12,14 @@
     <%- if !@drinks.empty? -%>
 
         <%- @drinks.each do |drink| -%>
-          <div class="eachDrink">
-            <ul><%= drink.title %></ul>
-            <ul> <img src= <%= drink.image_url %> alt="<%= drink.title %>" height="42" width="42"> </ul>
-            <ul><%= drink.season %></ul>
-            <ul><%= drink.instructions %></`ul`>
-            <ul><%= truncate(drink.description, length: 30) %></ul>
+          <div class="eachDrink colums medium-5">
+            <ul><%= drink.description %></ul>
+            <ul class="imageDrink"> <img src= <%= drink.image_url %> alt="<%= drink.title %>"> </ul>
+            <ul><strong><%= drink.title %></strong> <br><%= drink.season %></ul>
+
+            <ul><strong>THE PARTICULARS: </strong><%= drink.ingredients %></ul>
+            <ul><%= drink.instructions %></ul>
+
             <ul>
               <%= link_to 'Delete',
                 '/drinks/' + drink.to_param,

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160118002607) do
     t.string   "image_url"
     t.text     "description"
     t.text     "instructions"
+    t.text     "ingredients"
     t.string   "season"
     t.boolean  "featured",     default: false, null: false
     t.datetime "created_at",                   null: false

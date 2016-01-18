@@ -16,7 +16,15 @@
 
  */
 .eachDrink{
-  background-color: yellow;
+  background-color: cadetblue;
   display: inline-block;
-  margin: auto;
+  margin: 25px;
+  padding: 1.5em;
+  text-align: center;
+}
+
+.imageDrink img {
+  max-height: 25em;
+  padding: 1em;
+  background-color: #222222;
 }

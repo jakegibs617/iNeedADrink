@@ -2,10 +2,11 @@ class Drink < ActiveRecord::Base
   validates :title,
     presence: true,
     uniqueness: true,
-    length: { minimum: 5 }
+    length: { minimum: 3 }
 
   def self.search(query)
-    where("title ilike ? OR description ilike ? OR season ilike ? OR instructions ilike ?",
+    where("title ilike ? OR description ilike ? OR ingredients ilike ? OR season ilike ? OR instructions ilike ?",
+    "%#{query}%",
     "%#{query}%",
     "%#{query}%",
     "%#{query}%",

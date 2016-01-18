@@ -5,6 +5,7 @@ class CreateDrinks < ActiveRecord::Migration
       t.string :image_url
       t.text :description
       t.text :instructions
+      t.text :ingredients
       t.string :season
       t.boolean :featured, null: false, default: false
 
